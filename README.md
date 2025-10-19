@@ -1,5 +1,5 @@
 # BTW 2025 Data Science Challenge — Hourly Energy Price Forecasting
-# This was part of the course (M.Sc International Software System Science) @ Uni-Bamberg
+This was part of the course (M.Sc International Software System Science) @ Uni-Bamberg
 
 This repository contains my solution for the **BTW 2025 Data Science Challenge**, which asks participants to predict hourly day-ahead electricity prices in Germany.  
 
@@ -72,21 +72,14 @@ Each component is modular to allow reproducibility, ease of extension, and compa
 
 ```
 uv venv btw
-
 ```
 
 ```
 btw\Scripts\activate
-
 ```
 
-
-
-
 2. **Install dependencies**:  
-   
-   
-   ```
-   uv add -r requirements.txt
-   
-   ```
+```
+uv add -r requirements.txt
+```
+
