@@ -44,17 +44,17 @@ Here’s a high-level view of the folder layout:
 ```
 .
 ├── config/
-│ └── config.yaml # Hyperparameters, file paths, experiment settings
+│ └── config.yaml       # Hyperparameters, file paths, experiment settings
 ├── data/
-│ ├── raw/ # Raw/untouched data files (CSV, etc.)
-│ └── processed/ # Preprocessed, transformed datasets
+│ ├── raw/              # Raw/untouched data files (CSV, etc.)
+│ └── processed/        # Preprocessed, transformed datasets
 ├── src/
-│ ├── data/ # Data loading & preprocessing
-│ ├── models/ # Machine learning models, training/evaluation scripts
-│ ├── utils/ # Helper functions (metrics, MLflow logging, etc.)
-│ └── visualization/ # Code to visualize predictions vs. truth, error plots
-├── scripts/ # Command-line scripts (preprocess, train, evaluate)
-├── experiments/ # Experiment logs, model checkpoints, results
+│ ├── data/             # Data loading & preprocessing
+│ ├── models/           # Machine learning models, training/evaluation scripts
+│ ├── utils/            # Helper functions (metrics, MLflow logging, etc.)
+│ └── visualization/    # Code to visualize predictions vs. truth, error plots
+├── scripts/            # Command-line scripts (preprocess, train, evaluate)
+├── experiments/        # Experiment logs, model checkpoints, results
 ├── requirements.txt
 └── README.md
 
