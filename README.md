@@ -58,6 +58,8 @@ Here’s a high-level view of the folder layout:
 ├── requirements.txt
 └── README.md
 
+```
+
 
 Each component is modular to allow reproducibility, ease of extension, and comparative experiments.
 
