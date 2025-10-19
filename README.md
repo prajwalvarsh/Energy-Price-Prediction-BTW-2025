@@ -41,6 +41,7 @@ This repository documents my full end-to-end pipeline: data ingestion → prepro
 
 Here’s a high-level view of the folder layout:
 
+```
 .
 ├── config/
 │ └── config.yaml # Hyperparameters, file paths, experiment settings
@@ -56,3 +57,5 @@ Here’s a high-level view of the folder layout:
 ├── experiments/ # Experiment logs, model checkpoints, results
 ├── requirements.txt
 └── README.md
+
+```
