@@ -58,4 +58,18 @@ Here’s a high-level view of the folder layout:
 ├── requirements.txt
 └── README.md
 
-```
+
+Each component is modular to allow reproducibility, ease of extension, and comparative experiments.
+
+---
+
+## 🧰 Installation & Setup
+
+1. **Activate your virtual environment** (or create one)  
+2. **Install dependencies**:  
+   
+   
+   ```
+   uv add -r requirements.txt
+   
+   ```
