@@ -1,10 +1,11 @@
 # BTW 2025 Data Science Challenge — Hourly Energy Price Forecasting
+# This was part of the course (M.Sc International Software System Science) @ Uni-Bamberg
 
 This repository contains my solution for the **BTW 2025 Data Science Challenge**, which asks participants to predict hourly day-ahead electricity prices in Germany.  
 
 🗓️ **Challenge date to predict:** 18 February 2025  
 📌 **Organized by:** Gesellschaft für Informatik (GI)  
-📄 **Challenge page:** https://btw2025.gi.de/data-science-challenge :contentReference[oaicite:0]{index=0}  
+📄 **Challenge page:** https://btw2025.gi.de/data-science-challenge 
 
 ---
 
@@ -25,13 +26,13 @@ This repository contains my solution for the **BTW 2025 Data Science Challenge**
 
 ## 🎯 Challenge Overview
 
-Participants are tasked with forecasting **hourly day-ahead electricity prices** for a target date (Feb 18, 2025). The forecast consists of 24 hourly price values. The challenge encourages integrating domain knowledge, exploratory data analysis, and comparing different modeling strategies. :contentReference[oaicite:1]{index=1}  
+Participants are tasked with forecasting **hourly day-ahead electricity prices** for a target date (Feb 18, 2025). The forecast consists of 24 hourly price values. The challenge encourages integrating domain knowledge, exploratory data analysis, and comparing different modeling strategies. 
 
-Submissions require three artifacts:
+Submissions require three artifacts: (only if participating in the competition)
 
 1. A **PDF report** (narrative, methods, results)  
 2. A **CSV** file containing the 24 predicted hourly prices  
-3. A **ZIP archive** with the Jupyter notebook and any extra files/artifacts :contentReference[oaicite:2]{index=2}  
+3. A **ZIP archive** with the Jupyter notebook and any extra files/artifacts   
 
 This repository documents my full end-to-end pipeline: data ingestion → preprocessing → modeling → evaluation → prediction.
 
@@ -67,7 +68,21 @@ Each component is modular to allow reproducibility, ease of extension, and compa
 
 ## 🧰 Installation & Setup
 
-1. **Activate your virtual environment** (or create one)  
+1. **Activate your virtual environment** (or create one)
+
+```
+uv venv btw
+
+```
+
+```
+btw\Scripts\activate
+
+```
+
+
+
+
 2. **Install dependencies**:  
    
    
