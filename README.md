@@ -82,4 +82,80 @@ btw\Scripts\activate
 ```
 uv add -r requirements.txt
 ```
+(Or pip install -r requirements.txt if you’re using pip)
 
+# 3. **Set up MLflow (optional, for experiment tracking):**
+
+```
+uv run mlflow ui
+```
+
+Then browse to http://127.0.0.1:5000
+
+# 4. **Prepare directory structure:**
+
+Place raw input CSV(s) in data/raw/
+
+Ensure config/config.yaml paths match your file setup
+
+## 📊 Data & Preprocessing
+
+The raw dataset is loaded and time-indexed.
+
+I perform data cleaning (handling missing or anomalous values).
+
+Feature engineering includes incorporating exogenous variables (e.g. generation by renewables, load forecasts) and temporal features (hour, weekday, etc.).
+
+Scaling/normalization is done to ensure features are comparable.
+
+I then window the data into sequences (e.g. lookback of 24 hours) for supervised learning.
+
+Intermediate outputs (train/val/test splits, feature matrices) are saved in data/processed/, often in .npz or .npy format for fast loading.
+
+## 💡 Modeling Approach
+
+Instead of only using LSTM (as in earlier versions which was submitted as my project submission), I also experiment with classical machine learning models, such as:
+
+Linear Regression / Ridge / Lasso
+
+Random Forest Regressor
+
+Gradient Boosting (e.g. XGBoost, LightGBM)
+
+Support Vector Regression
+
+I built a model factory to instantiate models via configuration, and a training script that logs metrics and model artifacts to MLflow.
+
+Hyperparameters, feature sets, and experiment keys are all configurable via config.yaml.
+
+## 📈 Experiments & Tracking
+
+Each model run is tracked as an MLflow experiment/run, logging:
+
+Hyperparameters (e.g. number of trees, max depth)
+
+Metrics (MAE, RMSE, MAPE, R²)
+
+Model artifacts (serialized model object)
+
+Feature importance plots, error distributions
+
+You can compare runs visually via the MLflow UI.
+
+The best-performing model (on validation/test) is saved as the final checkpoint for prediction.
+
+## 📐 Evaluation & Results
+
+The models’ performance is reported on a held-out test set (never seen during training).
+
+Metrics include: MAE, RMSE, MAPE.
+
+Visualizations include:
+
+Predicted vs actual price curves
+
+Error histograms
+
+Feature importance rankings
+
+These help diagnose model behavior, overfitting, and possible improvements.
