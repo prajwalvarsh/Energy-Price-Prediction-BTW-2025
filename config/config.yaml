@@ -1,5 +1,6 @@
 # =====================================================
 # CONFIGURATION FILE — Energy Price Prediction (BTW)
+# Supports: LSTM and XGBoost
 # =====================================================
 
 # -----------------------
@@ -27,21 +28,35 @@ data:
 # -----------------------
 
 model:
-  type: "LSTM"
-  input_size: 6               # same as number of features
+  type: "LSTM"                 # choose: "LSTM" or "XGBoost"
+
+# --- LSTM model parameters ---
+LSTM:
+  input_size: 6                # same as number of features
   hidden_size: 128
   num_layers: 2
   dropout: 0.2
   output_size: 1
   bidirectional: false
 
+# --- XGBoost model parameters ---
+XGBoost:
+  n_estimators: 300
+  learning_rate: 0.05
+  max_depth: 6
+  subsample: 0.8
+  colsample_bytree: 0.8
+  reg_lambda: 1.0
+  reg_alpha: 0.0
+  random_state: 42
+
 # -----------------------
 # 3. Training Configuration
 # -----------------------
 
 training:
-  batch_size: 64
-  learning_rate: 0.001
+  batch_size: 64               # used only for LSTM
+  learning_rate: 0.001         # used only for LSTM
   num_epochs: 50
   optimizer: "Adam"
   loss_function: "MSELoss"
@@ -54,7 +69,7 @@ training:
 # -----------------------
 
 logging:
-  experiment_name: "energy_price_lstm"
+  experiment_name: "energy_price_prediction"
   tracking_uri: "experiments/mlruns"
   log_interval: 10
   save_best_model: true
